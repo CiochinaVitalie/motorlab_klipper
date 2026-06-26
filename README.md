@@ -21,8 +21,13 @@ MOTORLAB_ACCELEROMETER_QUERY
 MOTORLAB_MEASURE_AXES_NOISE
 MOTORLAB_ACCELEROMETER_MEASURE
 MOTORLAB_TEST_RESONANCES AXIS=X OUTPUT=raw_data
+MOTORLAB_TEST_RESONANCES_SAVE AXIS=X OUTPUT=raw_data
 MOTORLAB_SHAPER_CALIBRATE AXIS=X
 ```
+
+`MOTORLAB_TEST_RESONANCES_SAVE` runs the native Klipper resonance test and then
+copies any newly created `/tmp/raw_data*.csv` files into the MotorLab log
+directory.
 
 ## Notes
 

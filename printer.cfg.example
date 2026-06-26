@@ -19,10 +19,11 @@ probe_points:
 #################################################################
 
 [motorlab]
+log_path: ~/printer_data/logs/motorlab
+
 # The motor test and sensor helper sections below are intentionally left
 # commented out in the accelerometer-only mode.
 #axes: pan, tilt
-#log_path: ~/printer_data/logs/motorlab
 #default_axis: pan
 
 # [motorlab_encoder]
