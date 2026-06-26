@@ -1,0 +1,76 @@
+#################################################################
+# Klipper ADXL345 / resonance tools
+#################################################################
+
+# Native Klipper ADXL345 support. MotorLab only forwards commands to these
+# built-in G-codes; it does not read the sensor itself.
+[adxl345]
+cs_pin: <your_cs_pin>
+#spi_bus: spi0a
+axes_map: x, y, z
+
+[resonance_tester]
+accel_chip: adxl345
+probe_points:
+    100, 100, 20
+
+#################################################################
+# MotorLab
+#################################################################
+
+[motorlab]
+# The motor test and sensor helper sections below are intentionally left
+# commented out in the accelerometer-only mode.
+#axes: pan, tilt
+#log_path: ~/printer_data/logs/motorlab
+#default_axis: pan
+
+# [motorlab_encoder]
+# enabled: false
+# pan_device: /dev/ttyUSB0
+# tilt_device: /dev/ttyUSB1
+# position_tolerance_deg: 0.1
+
+# [motorlab_temperature]
+# enabled: false
+# max_motor_temp: 70.0
+# max_driver_temp: 85.0
+
+# [motorlab_test_speed]
+# start_speed: 10
+# stop_speed: 400
+# step_speed: 10
+# move_angle: 90
+# repeat: 3
+# position_tolerance_deg: 0.2
+
+# [motorlab_test_acceleration]
+# start_accel: 100
+# stop_accel: 3000
+# step_accel: 100
+# speed: 80
+# move_angle: 90
+# repeat: 3
+# position_tolerance_deg: 0.2
+
+# [motorlab_test_repeatability]
+# cycles: 100
+# move_angle: 90
+# speed: 80
+# position_tolerance_deg: 0.1
+
+# [motorlab_test_backlash]
+# cycles: 50
+# move_angle: 10
+# speed: 20
+
+# [motorlab_test_endurance]
+# cycles: 1000
+# move_angle: 90
+# speed: 80
+# log_every: 10
+
+# [motorlab_test_homing]
+# cycles: 100
+# move_away_angle: 30
+# speed: 40
