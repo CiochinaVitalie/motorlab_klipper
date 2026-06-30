@@ -19,23 +19,30 @@ probe_points:
 #################################################################
 
 [motorlab]
+mode: accelerometer_only
 log_path: ~/printer_data/logs/motorlab
 
-# The motor test and sensor helper sections below are intentionally left
-# commented out in the accelerometer-only mode.
+# Set mode=ptz to enable the PTZ motion tests below.
+#mode: ptz
 #axes: pan, tilt
 #default_axis: pan
 
-# [motorlab_encoder]
-# enabled: false
-# pan_device: /dev/ttyUSB0
-# tilt_device: /dev/ttyUSB1
-# position_tolerance_deg: 0.1
+[motorlab_encoder]
+# Set enabled=true to start the UART reader.
+enabled: false
+#device: /dev/ttyUSB0
+baudrate: 115200
+timeout: 0.1
+prefix: ENC
+position_tolerance_deg: 0.1
 
-# [motorlab_temperature]
-# enabled: false
-# max_motor_temp: 70.0
-# max_driver_temp: 85.0
+[motorlab_temperature]
+enabled: false
+max_motor_temp: 70.0
+max_driver_temp: 85.0
+
+# The motor test sections below are intentionally left commented out in the
+# accelerometer-only mode.
 
 # [motorlab_test_speed]
 # start_speed: 10
